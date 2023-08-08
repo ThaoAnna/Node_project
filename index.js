@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const fetch = require('node-fetch');
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello, World!');
 });
-app.get('/mypokemon', async (req, res) => {
+app.get('/api/mypokemon', async (req, res) => {
   const getPokemon = async (name) => { 
     const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     const myPokemon = await result.json()
